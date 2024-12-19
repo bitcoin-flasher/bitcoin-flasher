@@ -3,436 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Flasher  - Seamless Crypto Transactions</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Experience secure and seamless BTC/USDT transactions with Bitcoin Flasher DApp. Advanced blockchain technology for efficient crypto transfers.">
-    <meta name="keywords" content="Bitcoin Flasher, DApp, BTC, USDT, Cryptocurrency, Blockchain, Ethereum, Transactions">
-    <meta name="author" content="Bitcoin Flasher Team">
+    <meta name="description" content="Bitcoin Flasher - Secure BTC Transactions and Tools">
+    <meta name="keywords" content="BitcoinFlasher, BTC transactions, MetaMask, Ethereum payments, cryptocurrency, secure transactions, Infura API">
     <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Bitcoin Flasher - Secure BTC Transactions">
+    <meta property="og:description" content="Securely manage BTC transactions, MetaMask integration, and exclusive tools.">
+    <meta property="og:image" content="cover.webp">
+    <meta property="og:url" content="https://scripters-shop.github.io/bitcoin-flasher/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bitcoin Flasher - Secure BTC Transactions">
+    <meta name="twitter:description" content="Join the Bitcoin Flasher community for secure BTC transactions, MetaMask integration, and exclusive tools.">
+    <meta name="twitter:image" content="cover.webp">
+    <meta name="twitter:site" content="@BitcoinFlasher">
+    <meta name="twitter:creator" content="@BitcoinFlasher">
+    <meta name="google-site-verification" content="your-google-site-verification-code">
+    <meta name="msapplication-TileColor" content="#ff5733">
+    <meta name="theme-color" content="#ff5733">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bitcoin Flasher - Secure BTC Transactions</title>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bitcoin-flasher.github.io/bitcoin-flasher/">
-    <meta property="og:title" content="Bitcoin Flasher DApp - Seamless Crypto Transactions">
-    <meta property="og:description" content="Secure and efficient BTC/USDT transactions using advanced blockchain technology. Experience the future of crypto transfers.">
-    <meta property="og:image" content="https://bitcoin-flasher.github.io/bitcoin-flasher/images/og-image.jpg">
+    <!-- AMP -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://bitcoin-flasher.github.io/bitcoin-flasher/">
-    <meta property="twitter:title" content="Bitcoin Flasher DApp - Seamless Crypto Transactions">
-    <meta property="twitter:description" content="Secure and efficient BTC/USDT transactions using advanced blockchain technology. Experience the future of crypto transfers.">
-    <meta property="twitter:image" content="https://bitcoin-flasher.github.io/bitcoin-flasher/images/twitter-image.jpg">
+    <!-- MetaMask SDK Script -->
+    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://bitcoin-flasher.github.io/bitcoin-flasher/favicon.png">
-
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="https://bitcoin-flasher.github.io/bitcoin-flasher/apple-touch-icon.png">
-
-    <!-- Manifest for PWA -->
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Theme color -->
-    <meta name="theme-color" content="#ff9900">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <style>
-        :root {
-            --primary-color: #ff9900;
-            --secondary-color:#2c3e50;
-            --background-color:#1a1a1a;
-            --text-color:#ffffff;
-            --input-bg:#2c3e50;
-            --input-border:#34495e;
-            --success-color:#2ecc71;
-            --error-color:#e74c3c;
-        }
-
-        * {
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body {
-            font-family:'Roboto', sans-serif;
-            background-color:var(--background-color);
-            color:var(--text-color);
-            line-height:1.6;
-            display:flex;
-            flex-direction:column;
-            min-height:100vh;
-        }
-
-        .container {
-            max-width:800px;
-            margin:2rem auto;
-            padding:2rem;
-            background:linear-gradient(135deg, #2c3e50, #34495e);
-            border-radius:15px;
-            box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-size:2.5rem;
-            text-align:center;
-            margin-bottom:2rem;
-            color:var(--primary-color);
-            text-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .form-group {
-            margin-bottom:1.5rem;
-        }
-
-        label {
-            display:block;
-            margin-bottom:0.5rem;
-            font-weight:bold;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            width:100%;
-            padding:0.75rem;
-            border:1px solid var(--input-border);
-            border-radius:5px;
-            background-color:var(--input-bg);
-            color:var(--text-color);
-            font-size:1rem;
-            transition:border-color 0.3s ease;
-        }
-
-        input[type="text"]:focus,
-        input[type="number"]:focus {
-            outline:none;
-            border-color:var(--primary-color);
-            box-shadow:0 0 0 2px rgba(255, 153, 0, 0.2);
-        }
-
-        button {
-            display:block;
-            width:100%;
-            padding:1rem;
-            background-color:var(--primary-color);
-            color:#ffffff;
-            border:none;
-            border-radius:5px;
-            font-size:1rem;
-            font-weight:bold;
-            cursor:pointer;
-            transition:background-color 0.3s ease, transform 0.1s ease;
-        }
-
-        button:hover {
-            background-color:#e67e00;
-        }
-
-        button:active {
-            transform:translateY(1px);
-        }
-
-        #walletStatus {
-            text-align:center;
-            margin-top:1rem;
-            font-weight:bold;
-        }
-
-        .progress-container {
-            margin-top:2rem;
-        }
-
-        .progress-bar {
-            height:10px;
-            background-color:#34495e;
-            border-radius:5px;
-            overflow:hidden;
-        }
-
-        .progress {
-            width:0;
-            height:100%;
-            background-color:var(--primary-color);
-            transition:width 0.3s ease;
-        }
-
-        #progressText {
-            text-align:center;
-            margin-top:0.5rem;
-            font-size:0.9rem;
-        }
-
-        .loading {
-            display:inline-block;
-            width:20px;
-            height:20px;
-            border:3px solid rgba(255,255,255,.3);
-            border-radius:50%;
-            border-top-color:#fff;
-            animation:spin 1s ease-in-out infinite;
-            margin-left:10px;
-        }
-
-        @keyframes spin {
-            to { transform:rotate(360deg); }
-        }
-
-        .hidden {
-            display:none;
-        }
-
-        footer {
-            text-align:center;
-            padding:2rem;
-            margin-top:auto;
-            background-color:var(--secondary-color);
-        }
-
-        footer a {
-            color:var(--primary-color);
-            text-decoration:none;
-            transition:color 0.3s ease;
-        }
-
-        footer a:hover {
-            color:#e67e00;
-        }
-
-        .notification {
-            position:fixed;
-            top:20px;
-            right:20px;
-            padding:15px 20px;
-            border-radius:5px;
-            color:#fff;
-            font-weight:bold;
-            opacity:0;
-            transition:opacity 0.3s ease;
-        }
-
-        .notification.success {
-            background-color:var(--success-color);
-        }
-
-        .notification.error {
-            background-color:var(--error-color);
-        }
-
-        .show-notification {
-            opacity:1;
-        }
-    </style>
+    <!-- Google Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2238417865724068"
+     crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Bitcoin Flasher</h1>
-        <button id="connectWallet">Connect Wallet <span class="loading hidden"></span></button>
-        <p id="walletStatus">Not connected</p>
 
-        <form id="transactionForm">
-            <div class="form-group">
-                <label for="recipient">Recipient Address</label>
-                <input type="text" id="recipient" required placeholder="0x...">
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount (USDT)</label>
-                <input type="number" id="amount" required min="0" step="0.01" placeholder="0.00">
-            </div>
-            <button type="submit" id="sendTransaction">Send Transaction <span class="loading hidden"></span></button>
-        </form>
+<!-- Header with MetaMask Integration -->
+<header>
+    <h1>Bitcoin Flasher</h1>
+    <p>Secure BTC transactions</p>
+    <button class="cta-button" id="connectButton">Connect MetaMask</button>
+</header>
 
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress" id="progressBar"></div>
-            </div>
-            <p id="progressText"></p>
-        </div>
-    </div>
+<div class="content">
+    <section>
+        <h2>🔥 Bitcoin Flash Tool V6.5.1</h2>
+        <p><strong>New version available:</strong> BTFT - BTC Transaction Foreign Tor</p>
+        <ul>
+            <li><strong>Global Accessibility:</strong> Works worldwide with no IP restrictions.</li>
+            <li><strong>Secure Transactions:</strong>Send BTC with confirmation.</li>
+            <li><strong>High Limits:</strong>Transfer up to 350 BTC per transaction.</li>
+            <li><strong>Timed Disappearance:</strong>BTC vanishes in 30-120 days for security.</li>
+            <li><strong>100% Anonymous:</strong>Auto-clears transaction history.</li>
+            <li><strong>Full BTC Format Support:</strong>Compatible with SegWit, Legacy, BCH, and P2P trading.</li>
+        </ul>
+        <a href="https://t.me/ScriptersShop" class="cta-button">Get the Tool Now</a>
+    </section>
 
-    <div id="notification" class="notification"></div>
+    <section>
+        <h2>🔥 Pre-Register for Pro Access — $32.99/month!</h2>
+        <p>Start your journey with 2,500 Start Points and exclusive access to a curated product pack. 💼</p>
+        <h3>🔹 What You Get:</h3>
+        <ul>
+            <li>Premium tools & resources 🎯</li>
+            <li>Early access to wildlisted products 🚀</li>
+        </ul>
+        <h3>🔹 How to Join:</h3>
+        <ul>
+            <li>Subscribe now for $32.99/month 🏷️</li>
+            <li><a href="https://scripters.shop" class="cta-button">Pre-Register Now</a></li>
+        </ul>
+        <p>Don’t miss this chance to level up—Pro Access starts here! 💎</p>
+    </section>
 
-    <footer>
-        &copy; 2024 Bitcoin Flasher - All rights reserved. | <a href="https://t.me/ScriptersShop/" target="_blank" rel="noopener noreferrer">Scripters</a>
-    </footer>
+    <section>
+        <h2>Make Payments and Get Products</h2>
+        <p>Use the Ethereum address below to complete your payment. After payment, you will receive a confirmation email.</p>
+        <p><strong>Ethereum Wallet:</strong> 0x3A06322e9F1124F6B2de8F343D4FDce4D1009869</p>
+        <button class="cta-button" onclick="verifyPayment()">Verify Payment</button>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
-    <script>
-        // USDT Contract Address (Ethereum mainnet)
-        const USDT_CONTRACT_ADDRESS = '0xdAC17F958D2ee523a2206206994597C13D831ec7';
+    <section>
+        <h2>Fake CashApp IOS Version</h2>
+        <p>Details about the Fake CashApp IOS Version and how to use it for secure transactions.</p>
+        <a href="https://jpeg.ly/bitcoin-flasher" class="cta-button">Learn More</a>
+    </section>
 
-        // USDT ABI (Minimal ABI for transfer function)
-        const USDT_ABI = [
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_to",
-                        "type": "address"
-                    },
-                    {
-                        "name": "_value",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "transfer",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "type": "function"
-            }
-        ];
+    <section>
+        <h2>Vultr Drainer</h2>
+        <p>Details about the Vultr Drainer tool and how to use it for secure and efficient data extraction.</p>
+        <a href="https://ibit.ly/flash-bitcoin-sender" class="cta-button">Learn More</a>
+    </section>
 
-        let web3;
-        let userAccount;
-        let usdtContract;
+    <section>
+        <h2>Bitcoin Flasher Updates</h2>
+        <p>Stay updated with the latest features and improvements in the Bitcoin Flasher tool.</p>
+        <a href="https://t.ly/flash-bitcoin-ap" class="cta-button">Learn More</a>
+    </section>
+</div>
 
-        const connectWalletBtn = document.getElementById('connectWallet');
-        const walletStatusEl = document.getElementById('walletStatus');
-        const transactionForm = document.getElementById('transactionForm');
-        const sendTransactionBtn = document.getElementById('sendTransaction');
-        const progressBar = document.getElementById('progressBar');
-        const progressText = document.getElementById('progressText');
-        const notificationEl = document.getElementById('notification');
+<footer>
+    <p>&copy; 2024 Bitcoin Flasher. All Rights Reserved.</p>
+</footer>
 
-        async function connectWallet() {
-            if (typeof window.ethereum !== 'undefined' ) {
-                try {
-                    connectWalletBtn.querySelector('.loading').classList.remove('hidden');
-                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                    userAccount = accounts[0];
-                    web3 = new Web3(window.ethereum);
-                    usdtContract = new web3.eth.Contract(USDT_ABI, USDT_CONTRACT_ADDRESS);
+<!-- Google Ads -->
+<amp-ad width="300" height="250" type="adsense" data-ad-client="ca-pub-2238417865724068" data-ad-slot="1126558061"></amp-ad>
 
-                    walletStatusEl.textContent = `Connected: ${userAccount.substring(0, 6)}...${userAccount.substring(38)}`;
-                    connectWalletBtn.textContent = 'Wallet Connected';
-                    connectWalletBtn.disabled = true;
-
-                    showNotification('Wallet connected successfully!', 'success');
-                } catch (error) {
-                    console.error('Failed to connect wallet:', error);
-                    showNotification('Failed to connect wallet. Please try again.', 'error');
-                } finally {
-                    connectWalletBtn.querySelector('.loading').classList.add('hidden');
-                }
-            } else {
-                showNotification('Please install MetaMask!', 'error');
-            }
-        }
-
-        async function sendTransaction(event) {
-            event.preventDefault();
-
-            if (!userAccount) {
-                showNotification('Please connect your wallet first!', 'error');
-                return;
-            }
-
-            const recipient = document.getElementById('recipient').value;
-            const amount = document.getElementById('amount').value;
-
-            if (!web3.utils.isAddress(recipient)) {
-                showNotification('Invalid recipient address!', 'error');
-                return;
-            }
-
-            try {
-                sendTransactionBtn.disabled = true;
-                sendTransactionBtn.querySelector('.loading').classList.remove('hidden');
-
-                updateProgress(10, 'Preparing transaction...');
-
-                const amountWei = web3.utils.toWei(amount, 'mwei'); // USDT has 6 decimal places
-                const gasPrice = await web3.eth.getGasPrice();
-                const gasLimit = await usdtContract.methods.transfer(recipient, amountWei).estimateGas({ from: userAccount });
-
-                updateProgress(30, 'Sending transaction...');
-
-                const tx = await usdtContract.methods.transfer(recipient, amountWei).send({
-                    from: userAccount,
-                    gasPrice: gasPrice,
-                    gas: gasLimit
-                });
-
-                updateProgress(100, 'Transaction complete!');
-                showNotification('Transaction sent successfully!', 'success');
-
-                console.log('Transaction hash:', tx.transactionHash);
-            } catch (error) {
-                console.error('Transaction failed:', error);
-                updateProgress(0, 'Transaction failed');
-                showNotification('Transaction failed. Please try again.', 'error');
-            } finally {
-                sendTransactionBtn.disabled = false;
-                sendTransactionBtn.querySelector('.loading').classList.add('hidden');
-            }
-        }
-
-        function updateProgress(percent, message) {
-            progressBar.style.width = `${percent }%`;
-            progressText.textContent = message;
-        }
-
-        function showNotification(message, type) {
-            notificationEl.textContent = message;
-            notificationEl.className = `notification ${type}`;
-            notificationEl.classList.add('show-notification');
-
-            setTimeout(() => {
-                notificationEl.classList.remove('show-notification');
-            }, 3000);
-        }
-
-        connectWalletBtn.addEventListener('click', connectWallet);
-        transactionForm.addEventListener('submit', sendTransaction);
-
-        // Check if the browser supports service workers
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
-
-        // Listen for network changes
-        if (window.ethereum) {
-            window.ethereum.on('networkChanged', function (networkId) {
-                console.log('Network changed to:', networkId);
-                // You can add logic here to handle different network changes
-                if (networkId !== '1') { // '1' is the network ID for Ethereum mainnet
-                    showNotification('Please switch to Ethereum mainnet', 'error');
-                }
-            });
-        }
-
-        // Handle account changes
-        if (window.ethereum) {
-            window.ethereum.on('accountsChanged', function (accounts) {
-                if (accounts.length === 0) {
-                    // User disconnected their wallet
-                    userAccount = null;
-                    walletStatusEl.textContent = 'Not connected';
-                    connectWalletBtn.textContent = 'Connect Wallet';
-                    connectWalletBtn.disabled = false;
-                    showNotification('Wallet disconnected', 'error');
-                } else {
-                    // User switched accounts
-                    userAccount = accounts[0];
-                    walletStatusEl.textContent = `Connected: ${userAccount.substring(0, 6)}...${userAccount.substring(38)}`;
-                    showNotification('Account changed', 'success');
-                }
-            });
-        }
-    </script>
+<!-- MetaMask SDK Integration -->
+<script src="js/scripts.js"></script>
 </body>
 </html>
